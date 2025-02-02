@@ -1,4 +1,4 @@
-package useragent
+package fakeuseragent
 
 var WIN_NT = [8]string{"5.1", "5.2", "6.0", "6.1", "6.2", "6.3", "6.4", "10.0"}
 
