@@ -6,7 +6,7 @@ The package provides two main functions for retrieving user agents:
 
 - RandomUserAgent: Retrieves a random user agent.
 - MobileUserAgent: Retrieves a random user agent from mobile devices.
-- PCUserAgent: Retrieves a random user agent from popular Desktops.
+- DesktopUserAgent: Retrieves a random user agent from popular Desktops.
 - RandomUserAgent: Retrieves a random user agent from the supported browsers.
 
 Here's an example of how to use the package:
@@ -22,7 +22,7 @@ import (
 
 func main() {
 	// Get a random user agent for Desktop
-	desktopUserAgent := fakeuseragent.PCUserAgent()
+	desktopUserAgent := fakeuseragent.DesktopUserAgent()
 	fmt.Println("Desktop User Agent:", desktopUserAgent)
 }
 ```

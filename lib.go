@@ -34,37 +34,37 @@ func (ua UserAgent) String() string {
 	return fmt.Sprintf("%s %s %s", ua.product, ua.osVer, ua.browser)
 }
 
-func RandomUserAgent() UserAgent {
+func RandomUserAgent() string {
 	rng := rand.New(rand.NewSource(time.Now().UnixNano()))
 	return UserAgent{
 		product: MozillaProduct,
 		osVer:   RandomDevice(rng),
 		browser: RandomBrowser(rng),
-	}
+	}.String()
 }
 
-func MobileUserAgent() UserAgent {
+func MobileUserAgent() string {
 	rng := rand.New(rand.NewSource(time.Now().UnixNano()))
 	return UserAgent{
 		product: MozillaProduct,
 		osVer:   MobileDeviceFunc(rng),
 		browser: RandomBrowser(rng),
-	}
+	}.String()
 }
 
-func PCUserAgent() UserAgent {
+func DesktopUserAgent() string {
 	rng := rand.New(rand.NewSource(time.Now().UnixNano()))
 	return UserAgent{
 		product: MozillaProduct,
 		osVer:   PCDeviceFunc(rng),
 		browser: RandomBrowser(rng),
-	}
+	}.String()
 }
 
-func CustomUserAgent(osVer Devices, browser Browser) UserAgent {
+func CustomUserAgent(osVer Devices, browser Browser) string {
 	return UserAgent{
 		product: MozillaProduct,
 		osVer:   osVer,
 		browser: browser,
-	}
+	}.String()
 }
